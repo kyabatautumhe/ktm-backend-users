@@ -2,12 +2,11 @@ package life.users.models
 
 import jakarta.persistence.*
 import life.users.models.enums.UserPhotoActiveStatus
+import java.util.*
 
 @Entity(name = "user_photos")
 data class UserPhotosModel(
-    @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
-    val user: UserModel,
+    val userId: UUID,
 
     val photoUrl: String,
 
