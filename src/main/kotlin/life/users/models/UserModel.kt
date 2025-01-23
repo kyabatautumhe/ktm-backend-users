@@ -6,7 +6,7 @@ import jakarta.persistence.EnumType
 import jakarta.persistence.Enumerated
 import life.users.models.enums.UserActiveStatus
 
-@Entity(name="users")
+@Entity(name = "users")
 data class UserModel(
     val name: String,
 
@@ -19,5 +19,5 @@ data class UserModel(
     val phoneNumber: String,
 
     @Enumerated(value = EnumType.STRING)
-    val activeStatus: UserActiveStatus,
+    val activeStatus: UserActiveStatus = UserActiveStatus.UNDER_VERIFICATION,
 ) : BaseModel()

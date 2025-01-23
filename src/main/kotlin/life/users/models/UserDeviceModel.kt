@@ -1,12 +1,10 @@
 package life.users.models
 
 import jakarta.persistence.Entity
-import jakarta.persistence.JoinColumn
-import jakarta.persistence.ManyToOne
 import java.util.UUID
 
 @Entity(name = "user_device")
-data class UserDevice(
+data class UserDeviceModel(
 
     val userId: UUID,
 
