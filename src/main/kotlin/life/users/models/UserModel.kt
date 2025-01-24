@@ -15,8 +15,11 @@ data class UserModel(
     @Column(unique = true, nullable = false)
     val email: String,
 
-    @Column(name = "phone_number", unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     val phoneNumber: String,
+
+    @Column(nullable = false)
+    val password: String,
 
     @Enumerated(value = EnumType.STRING)
     val activeStatus: UserActiveStatus = UserActiveStatus.UNDER_VERIFICATION,
