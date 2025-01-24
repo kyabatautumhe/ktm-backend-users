@@ -10,6 +10,7 @@ import life.users.models.enums.UserActiveStatus
 data class UserModel(
     val name: String,
 
+    @Column(unique = true, nullable = false)
     val userName: String,
 
     @Column(unique = true, nullable = false)
