@@ -1,13 +1,13 @@
 package life.users.models
 
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.MappedSuperclass
+import jakarta.persistence.*
 import lombok.Getter
 import lombok.Setter
+import org.hibernate.annotations.CreationTimestamp
+import org.hibernate.annotations.UpdateTimestamp
 import org.jetbrains.annotations.NotNull
 import java.util.*
+
 
 @Getter
 @Setter
@@ -18,4 +18,11 @@ class BaseModel {
     @GeneratedValue(strategy = GenerationType.UUID)
     @NotNull
     lateinit var id: UUID
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    private lateinit var createdAt: Date
+
+    @UpdateTimestamp
+    private lateinit var updatedAt: Date
 }
