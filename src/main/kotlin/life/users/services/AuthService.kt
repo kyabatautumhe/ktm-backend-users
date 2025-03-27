@@ -14,6 +14,7 @@ import java.util.*
 class AuthService {
 
     private lateinit var userModelRepository: UserModelRepository
+    private lateinit var signupEmailProducer: SignupEmailProducer
 
     fun login(userLoginRequest: UserLoginRequest): UserLoginResponse {
         val optionalUserModel: Optional<UserModel> = userModelRepository.findByEmail(userLoginRequest.email)
@@ -29,6 +30,5 @@ class AuthService {
         } else {
             throw UserNotFoundException("User not found")
         }
-
     }
 }
